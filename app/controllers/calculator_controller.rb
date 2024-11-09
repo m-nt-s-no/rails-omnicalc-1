@@ -7,9 +7,9 @@ class CalculatorController < ApplicationController
     @action = "Square"
     @input = params.fetch("number").to_f
     @result = @input ** 2
-    @back_link = "/square/new"
+    @back_link = "/pages_templates/square_new"
     @back_link_text = "Calculate another square"
-    @data = {:input => @input, :result => @result, :back_link => @back_link, :back_link_text => @back_link_text}
+    @data = {:input => @input, :result => @result}
     puts @data
     render({:template => "pages_templates/results"})
   end
