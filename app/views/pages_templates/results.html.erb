@@ -1,7 +1,7 @@
 <h1><%= "#{@action}" %> Results</h1>
 
 <dl>
-<% @params.each do |key, val| %>
+<% @data.each do |key, val| %>
   <% if key == "apr"%>
     <% val = val.to_f.to_fs(:percentage, {:precision => 4})%>
   <% elsif key == "principal"%>

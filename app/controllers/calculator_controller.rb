@@ -9,11 +9,12 @@ class CalculatorController < ApplicationController
     @result = @input ** 2
     @back_link = "/square/new"
     @back_link_text = "Calculate another square"
+    @data = {:input => @input, :result => @result, :back_link => @back_link, :back_link_text => @back_link_text}
+    puts @data
     render({:template => "pages_templates/results"})
   end
 
   def results
-    @params = params
     render({:template => "pages_templates/results"})
   end
 end
