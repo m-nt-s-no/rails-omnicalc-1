@@ -1,7 +1,7 @@
 <h1><%= "#{@action}" %> Results</h1>
 
 <dl>
-<% @data.each do |key, val| %>
+<% params.each do |key, val| %>
   <% if key == "apr"%>
     <% val = val.to_f.to_fs(:percentage, {:precision => 4})%>
   <% elsif key == "principal"%>
@@ -11,6 +11,8 @@
     <% key = "number of years"%>
   <%elsif key == "min" || key == "max"%>
     <%key += "imum"%>
+  <%elsif key == "controller" || key == "action"%>
+    <% next %>
   <% end %>
   <% if key == "apr"%>
     <dt><%= "#{key}".upcase! %></dt>
